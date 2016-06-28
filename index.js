@@ -44,5 +44,5 @@ http.listen(port, function(){
 setInterval(() => io.emit('sequencePi', sequenceFromPhone), 500);
 setInterval(() => io.emit('sequencePhone', sequenceFromPi), 500);
 setInterval(() => io.emit('messagePhone', Date.now()), 500);
-setInterval(() => console.log("Working...");
+setInterval(() => console.log("Working..."));
 
