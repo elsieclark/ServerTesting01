@@ -3,6 +3,7 @@
     <p id='server-time'></p>
     <form name="formOne">
         <input id="dataentry" type="text" name="firstname">
+        <input type="button" value="Input" onclick="javascript:sendOff();">
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -10,8 +11,11 @@
       var el = document.getElementById('server-time');
       socket.on('sequencePi', function(timeString) {
         el.innerHTML = 'Message: ' + timeString;
-        socket.emit('sequencePhone', document.getElementById("dataentry").value)
       });
+        
+      var sendOff = function() {
+          socket.emit('sequencePhone', document.getElementById("dataentry").value)
+      }
     </script>
     
   </body>
