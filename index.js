@@ -3,6 +3,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = 80;
 
+
+
 var sequenceFromPi = ""
 var sequenceFromPhone = "[8, 8, 8, 8]"
 
@@ -14,6 +16,8 @@ var toMorseQueue = []
 app.get('/', function(req, res){
   res.sendfile('index.html');
 });
+
+app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
     
