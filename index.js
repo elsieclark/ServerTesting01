@@ -17,7 +17,7 @@ app.get('/', function(req, res){
   res.sendfile('index.html');
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(app.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
     
