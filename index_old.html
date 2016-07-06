@@ -1,0 +1,119 @@
+<html>
+  <body>
+    <p id='server-time'></p>
+    <form name="formOne">
+        <input id="dataentry" type="text" name="firstname">
+        <input type="button" value="Input" onclick="javascript:sendOff();">
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io("159.203.20.5");
+      var el = document.getElementById('server-time');
+      socket.on('sequencePi', function(timeString) {
+        el.innerHTML = 'Message: ' + timeString;
+      });
+        
+      var sendOff = function() {
+          socket.emit('sequencePhone', document.getElementById("dataentry").value)
+      }
+    </script>
+    
+  </body>
+</html>
+
+
+        document.portRange.submit_button.value = "SingleForward";
+        document.portRange.action.value = "Apply";
+        document.portRange.submit();
+
+
+E1000
+E2000
+
+
+
+
+      {
+        "regex": "Basic realm=\\\"Linksys E2100L\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"E1000\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"Linksys E2000\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"Linksys E3200\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"Linksys E4200\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"Linksys E4200EB\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"E800\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"WRT160N\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"WRT160NL\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"WRT400N\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"WRT54GH\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+      {
+        "regex": "Basic realm=\\\"Linksys WRT54GR\\\"",
+        "remainder": 1,
+        "interval": 14400000
+      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
