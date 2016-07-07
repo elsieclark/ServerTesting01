@@ -22,13 +22,13 @@
 <body>
     <div id="container">
         <div id="maintopbar">
-            <p id="sitename">Will Clark's Projects</p>
+            <a href="http://willclark.io/"><p id="sitename">W</p></a>
             
             
             <ul>
                 <li><p>Bio/Contact</p></li>
                 <li><p>Skills/Technologies</p></li>
-                <li><p>Projects</p></li>
+                <li class="maintopbarcurrentpage"><p>Projects</p></li>
             </ul>
             
             
@@ -45,34 +45,34 @@
                 
                 <li class="projectlistitem">
                     
-                    <p class="projectlistname">Project A</p>
+                    <p class="projectlistname" onclick="inPageLink(this)">Project A</p>
                 
                     <ul class="projectcatlist">
-                        <li><p>Part 1</p></li>
-                        <li><p>Part 2</p></li>
-                        <li><p>Part 3</p></li>
-                        <li><p>Part 4</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 1</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 2</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 3</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 4</p></li>
                     </ul>
                     
                 </li>
                 
                 <li class="projectlistitem">
-                    <p class="projectlistname">Project B</p>
+                    <p class="projectlistname" onclick="inPageLink(this)">Project B</p>
                 
                     <ul class="projectcatlist">
-                        <li><p>Part 1</p></li>
-                        <li><p>Part 2</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 1</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 2</p></li>
                     </ul>
                     
                 </li>
                 
                 <li class="projectlistitem">
-                    <p class="projectlistname">Fine BLDC Controller</p>
+                    <p class="projectlistname" onclick="inPageLink(this)">Project C</p>
                 
                     <ul class="projectcatlist">
-                        <li><p>Part 1</p></li>
-                        <li><p>Part 2</p></li>
-                        <li><p>Part 3</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 1</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 2</p></li>
+                        <li onclick="inPageLink(this)"><p>Part 3</p></li>
                     </ul>
                     
                 </li>
@@ -98,7 +98,7 @@
                         
                         <div class="mainpartleft">
                             
-                            <div class="projectname">
+                            <div class="projectname" >
                                 <p>Project A</p>
                             </div>
                             
@@ -136,11 +136,11 @@
                             
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 1</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent"><p>Some additional content relating to project B.</p></div>
                             </div>
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 2</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent"><p>Some additional content relating to project B.</p></div>
                             </div>
                         </div>
 
@@ -160,15 +160,15 @@
 
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 1</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent"><p>Some additional content adhering to project C.</p></div>
                             </div>
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 2</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent"><p>Some additional content adhering to project C.</p></div>
                             </div>
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 3</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent"><p>Some additional content adhering to project C.</p></div>
                             </div>
                         </div>
 
@@ -276,6 +276,34 @@
         changeSidebar();
         
         $(window).scroll(changeSidebar);
+        
+        
+        
+        
+    </script>
+    
+    <script>
+        
+        var inPageLink = function(el) {
+            if ($(el).hasClass("projectlistname")) {
+                var projectNumber = $(el).parent().index();
+                console.log("projectNumber: " + projectNumber);
+                
+                var runningHeight = 0;
+                var i = 0;
+                
+                for (i = 0; i < projectNumber; i++){
+                    runningHeight += $('#projectsmainlist').children().eq(i).height();
+                }
+                
+                console.log("runningHeight: " + runningHeight);
+                
+                $(window).scrollTop(runningHeight + projectNumber);
+                
+            } else {
+                console.log("3");
+            }
+        }
         
         
         
