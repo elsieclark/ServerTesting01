@@ -56,7 +56,7 @@ body {
 
 #filters {
     margin: 55px 0px 0px 0px;
-    height: 30px;
+    height: 80px;
     width: 100%;
     float: left;
     
@@ -86,15 +86,15 @@ body {
 
 }
 
-.projectname{
+.projectlistname{
     font-size: 0.9em;
     font-weight: 300;
     width: calc(100% - 20px);
     margin: 0px 0px 0px 0px;
-    padding: 8px 10px 8px 10px;
+    padding: 8px 10px 8px 15px;
 }
 
-.projectname:hover {
+.projectlistname:hover {
     background-color: #D0D0D0;
 }
 
@@ -108,17 +108,23 @@ body {
     border-top-width: 1px
 }
 
-.projectcatlist li {
+.projectcatlistother {
     list-style: none;
     width: inherit;
     padding: 4px 0px 4px 0px;
     margin: 0px;
     background-color: #FFFFFF;
-        
-
 }
 
-.projectcatlist li:hover {
+.projectcatlistcurrent {
+    list-style: none;
+    width: inherit;
+    padding: 4px 0px 4px 0px;
+    margin: 0px;
+    background-color: #DDDDDD;
+}
+
+.projectcatlistother:hover {
     background-color: #F5F5F5;
 }
 
@@ -126,13 +132,13 @@ body {
     font-size: 0.8em;
     font-weight: 300;
     width: inherit;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 25px;
 }
 
 #sidebarborder {
     background-color: #F5F5F5;
     height: calc(100%);
-    width: 9px;
+    width: 3px;
     margin: 0px 0px 0px 180px;
 
     border-left-width: 1px;
@@ -157,7 +163,7 @@ body {
 #sidebarborderbottom {
     background-color: #F5F5F5;
     height: calc(100%);
-    width: 9px;
+    width: 3px;
     margin: 0px 0px 0px 180px;
 
     border-left-width: 1px;
@@ -171,18 +177,80 @@ body {
 }
 
 #mainpart {
-    padding: 55px 0px 0px 191px;
+    padding: 55px 0px 0px 185px;
     margin: 0px;
 }
 
 #mainparttotal {
-    height: 1500px;
     width: 100%;
     z-index: 1;
     margin: 0px;
+    padding: 0px;
+    overflow: auto;
 }
 
-#mainpartleft {
+#projectsmainlist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+}
+
+.mainproject {
+    overflow: auto;
+    background-color: #1A2025;
+}
+
+.projectname {
+    width: 100%;
+    height: 70px;
+    
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(150,150,150,1);
+}
+
+.projectname p {
+    opacity: 1;
+    font-size: 2em;
+    padding: 0px;
+    margin: 15px 0px 0px 15px;
+}
+
+.projectsubtitle {
+    width: 100%;
+    height: 30px;
+    background: rgba(0,36,40,0.1);
+    
+    border-width: 1px 0px 1px 0px;
+    border-style: solid solid solid solid;
+    border-color: rgba(100,100,100,0.3);
+}
+
+.projectsubtitle p {
+    opacity: 1;
+    font-size: 1.2em;
+    font-weight: 300;
+    padding: 0px;
+    margin: 1px 0px 0px 15px;
+    color: #000000;
+}
+
+.projectpart {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 550px;
+}
+
+.projectsubtitle p {
+    margin: 2px 0px 0px 10px;
+}
+
+.projectcontent p {
+    margin: 10px 0px 0px 10px;
+}
+
+.mainpartleft {
     float: left;
     width: 65%;
     height: 100%;
@@ -190,7 +258,7 @@ body {
     margin: 0px;
 }
 
-#mainpartright {
+.mainpartright {
     float: left;
     width: 35%;
     margin: 0px;

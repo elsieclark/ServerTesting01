@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="wc_style_01.css">
     
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
 </head>
     
@@ -21,7 +22,7 @@
 <body>
     <div id="container">
         <div id="maintopbar">
-            <p id="sitename">W</p>
+            <p id="sitename">Will Clark's Projects</p>
             
             
             <ul>
@@ -44,7 +45,7 @@
                 
                 <li class="projectlistitem">
                     
-                    <p class="projectname">Project A</p>
+                    <p class="projectlistname">Project A</p>
                 
                     <ul class="projectcatlist">
                         <li><p>Part 1</p></li>
@@ -56,9 +57,9 @@
                 </li>
                 
                 <li class="projectlistitem">
-                    <p class="projectname">Project B</p>
+                    <p class="projectlistname">Project B</p>
                 
-                    <ul class="projectcatlist" hidden="true">
+                    <ul class="projectcatlist">
                         <li><p>Part 1</p></li>
                         <li><p>Part 2</p></li>
                     </ul>
@@ -66,11 +67,12 @@
                 </li>
                 
                 <li class="projectlistitem">
-                    <p class="projectname">Fine BLDC Controller</p>
+                    <p class="projectlistname">Fine BLDC Controller</p>
                 
                     <ul class="projectcatlist">
                         <li><p>Part 1</p></li>
                         <li><p>Part 2</p></li>
+                        <li><p>Part 3</p></li>
                     </ul>
                     
                 </li>
@@ -90,13 +92,94 @@
         
         <div id="mainpart">
             <div id="mainparttotal">
-                <div id="mainpartleft">
+                
+                <ul id="projectsmainlist">
+                    <li class="mainproject">
+                        
+                        <div class="mainpartleft">
+                            
+                            <div class="projectname">
+                                <p>Project A</p>
+                            </div>
+                            
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 1</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 2</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 3</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 4</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            
+                        </div>
 
-                </div>
+                        <div class="mainpartright">
+                            <div class="projectname">
+                            </div>
+                        </div>
+                    
+                    </li>
+                    
+                    <li class="mainproject">
+                        <div class="mainpartleft">
+                            <div class="projectname">
+                                <p>Project B</p>
+                            </div>
+                            
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 1</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 2</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                        </div>
 
-                <div id ="mainpartright">
+                        <div class="mainpartright">
+                            <div class="projectname">
+                            </div>
+                        </div>
+                    
+                    </li>
+                    
+                    <li class="mainproject">
+                        
+                        <div class="mainpartleft">
+                            <div class="projectname">
+                                <p>Project C</p>
+                            </div>
 
-                </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 1</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 2</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                            <div class="projectpart">
+                                <div class="projectsubtitle"><p>Part 3</p></div>
+                                <div class="projectcontent"><p>Some additional content</p></div>
+                            </div>
+                        </div>
+
+                        <div class="mainpartright">
+                            <div class="projectname">
+                            </div>
+                        </div>
+                    
+                    </li>
+                </ul>
+                
             </div> <!-- 'mainparttotal' ends -->
             
         </div> <!-- 'mainpart' ends -->
@@ -107,5 +190,98 @@
         </div>
     
     </div> <!-- 'container' ends -->
+    
+    
+    <script>
+        var heightOne = 0;
+        var heightTwo = $('.mainproject').first().height();
+        
+        var projectCount = $('.mainproject').length;
+        
+        var i = 0;
+        
+        var changeSidebar = function() {
+            
+            console.log($(this).scrollTop() + " " + $(this).innerHeight() + " " + $('#container').height())
+            
+            if($(this).scrollTop() + $(this).innerHeight() >= $('#container').height()) {
+                for (i = 0; i < projectCount - 1; i++) {
+                    $('.projectcatlist').eq(i).hide();
+                }
+                $('.projectcatlist').eq(projectCount - 1).show();
+                
+                var j = 0
+                var subDivs = $('.mainpartleft').eq(projectCount - 1).find('.projectpart').length;
+                
+                for (j = 0; j < subDivs - 1; j++) {
+                    $('.projectcatlist').eq(i).find('li').eq(j).removeClass('projectcatlistcurrent');
+                    $('.projectcatlist').eq(i).find('li').eq(j).addClass('projectcatlistother');
+                }
+                
+                $('.projectcatlist').eq(i).find('li').eq(j).addClass('projectcatlistcurrent');
+                $('.projectcatlist').eq(i).find('li').eq(j).removeClass('projectcatlistother');
+                
+                
+            } else {
+            
+                for (i = 0; i < projectCount; i++){
+
+
+                    if ($(this).scrollTop() + 30 > heightOne - 1 && $(this).scrollTop() + 30 < heightTwo) {
+                        $('.projectcatlist').eq(i).show();
+
+
+                        var j = 0;
+
+                        var subDivs = $('.mainpartleft').eq(i).find('.projectpart').length;
+
+                        var subHeightOne = heightOne;
+                        var subHeightTwo = heightOne + $('.mainpartleft').eq(i).find('.projectpart:eq(0)').height();
+
+                        //console.log(subDivs + " " + subHeightOne + " " + subHeightTwo);
+
+                        for (j = 0; j < subDivs; j++) {
+
+                             if (($(this).scrollTop() - 20 > subHeightOne && $(this).scrollTop() - 20 < subHeightTwo )||($(this).scrollTop() < subHeightTwo && j == 0) || ($(this).scrollTop() > subHeightOne && j == subDivs - 1)) {
+                                 console.log(j);
+
+                                 $('.projectcatlist').eq(i).find('li').eq(j).addClass('projectcatlistcurrent');
+                                 $('.projectcatlist').eq(i).find('li').eq(j).removeClass('projectcatlistother');
+
+                             } else {
+                                 $('.projectcatlist').eq(i).find('li').eq(j).removeClass('projectcatlistcurrent');
+                                 $('.projectcatlist').eq(i).find('li').eq(j).addClass('projectcatlistother');
+                             }
+                            subHeightOne += $('.mainpartleft').eq(i).find('.projectpart').eq(j).height();
+                            if (subDivs - j > 1){
+                                subHeightTwo += $('.mainpartleft').eq(i).find('.projectpart').eq(j + 1).height();
+                            }
+                        }
+
+
+                    } else {
+                        $('.projectcatlist').eq(i).hide();
+                    }
+                    heightOne += $('.mainproject').eq(i).height();
+                    heightTwo += $('.mainproject').eq(i + 1).height();
+                }
+
+                heightOne = 0;
+                heightTwo = $('.mainproject').first().height();
+                
+            }
+            
+        }
+        
+        changeSidebar();
+        
+        $(window).scroll(changeSidebar);
+        
+        
+        
+        
+    </script>
+    
+    
 </body>
 </html>
