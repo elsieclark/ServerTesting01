@@ -135,7 +135,7 @@
                                     <p> 
                                         Aenean inceptos condimentum ad sit sodales ullamcorper convallis facilisis litora eget bibendum, quam lacinia potenti scelerisque nam interdum lacus molestie per enim.
                                     </p>
-                                    <p>Some additional content adhering to project A.</p>
+                                    <iframe class="video" src="https://www.youtube.com/embed/xDMP3i36naA" frameborder="0" allowfullscreen></iframe>
                                     <p> 
                                         Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis aliquet litora.
                                     </p>
@@ -256,6 +256,7 @@
                                         Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis aliquet litora.
                                     </p>
                                     <p>Some additional content adhering to project C.</p>
+                                    <iframe class="video" src="https://www.youtube.com/embed/FG0fTKAqZ5g" frameborder="0" allowfullscreen></iframe>
                                     <p> 
                                         Aenean inceptos condimentum ad sit sodales ullamcorper convallis facilisis litora eget bibendum, quam lacinia potenti scelerisque nam interdum lacus molestie per enim.
                                     </p>
@@ -457,6 +458,14 @@
         $('.projectlistitem').hover(lower, changeSidebar);
         
         
+    </script>
+    
+    <script>
+    $('.video').each(function(index, el){
+        $(this).css('width', '100%');
+        $(this).css('height', ($(this).width() * 9 / 16));
+    })
+    
     </script>
     
     
