@@ -40,6 +40,8 @@ body {
     vertical-align: middle;
     float: right;
     cursor: pointer;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 .maintopbarcurrentpage {
@@ -47,7 +49,7 @@ body {
 }
 
 #maintopbar li:hover {
-    background-color: #005054;
+    background-color: #006064;
 }
 
 
@@ -212,14 +214,13 @@ body {
 
 .projectname {
     width: 100%;
-    height: 70px;
 }
 
 .projectname p {
     opacity: 1;
     font-size: 2em;
     padding: 0px;
-    margin: 15px 0px 0px 15px;
+    margin: 15px 0px 15px 15px;
 }
 
 .projectsubtitle {
@@ -244,7 +245,8 @@ body {
 .projectpart {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    height: 550px;
+    
+    overflow: auto;
 }
 
 .projectsubtitle p {
@@ -252,7 +254,7 @@ body {
 }
 
 .projectcontent p {
-    margin: 10px 0px 0px 10px;
+    margin: 15px;
 }
 
 .mainpartleft {
