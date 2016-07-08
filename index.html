@@ -148,7 +148,15 @@
                             </div>
                             <div class="projectpart">
                                 <div class="projectsubtitle"><p>Part 4</p></div>
-                                <div class="projectcontent"><p>Some additional content</p></div>
+                                <div class="projectcontent">
+                                    <p>Some additional content</p>
+                                    <p> 
+                                        Fusce volutpat tincidunt ac libero fames sollicitudin convallis cras taciti, quisque sagittis per ut ullamcorper ut pellentesque ante, condimentum viverra varius eleifend proin quis hac nullam ac tortor blandit arcu ut leo turpis aliquet litora.
+                                    </p>
+                                    <p>
+                                        Ut aliquam nisl proin nibh fames duis ut, donec bibendum interdum lectus feugiat vitae arcu, class rutrum vulputate netus nunc tincidunt libero posuere volutpat per vivamus tristique convallis felis donec per placerat turpis cras scelerisque.
+                                    </p>
+                                </div>
                             </div>
                             
                         </div>
@@ -314,9 +322,11 @@
             
             if($(window).scrollTop() + $(window).innerHeight() >= $('#container').height()) {
                 for (i = 0; i < projectCount - 1; i++) {
-                    $('.projectcatlist').eq(i).hide();
+                    $('.projectcatlist').eq(i).slideUp(100);
+                    $('.projectlistitem').eq(i).find('.projectlistname').removeClass('projectlistnameselected');
                 }
-                $('.projectcatlist').eq(projectCount - 1).show();
+                $('.projectcatlist').eq(projectCount - 1).slideDown(100);
+                $('.projectlistitem').eq(projectCount - 1).find('.projectlistname').addClass('projectlistnameselected');
                 
                 var j = 0
                 var subDivs = $('.mainpartleft').eq(projectCount - 1).find('.projectpart').length;
@@ -337,6 +347,7 @@
 
                     if ($(window).scrollTop() + 30 > heightOne - 1 && $(window).scrollTop() + 30 < heightTwo) {
                         $('.projectcatlist').eq(i).slideDown(100);
+                        $('.projectlistitem').eq(i).find('.projectlistname').addClass('projectlistnameselected');
 
 
                         var j = 0;
@@ -369,6 +380,7 @@
 
                     } else {
                         $('.projectcatlist').eq(i).slideUp(100);
+                        $('.projectlistitem').eq(i).find('.projectlistname').removeClass('projectlistnameselected');
                         
                         $('.projectcatlist').eq(i).children().each(function(index, el) {
                             $(el).removeClass('projectcatlistcurrent');

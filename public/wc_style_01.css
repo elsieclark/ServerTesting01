@@ -101,6 +101,11 @@ body {
     padding: 8px 10px 8px 15px;
 }
 
+.projectlistnameselected{
+    background-color: #FFFFFF;
+    width: calc(100% - 25px);
+}
+
 .projectlistname:hover {
     background-color: #D0D0D0;
 }
@@ -121,6 +126,7 @@ body {
     padding: 4px 0px 4px 0px;
     margin: 0px;
     background-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .projectcatlistcurrent {
@@ -128,7 +134,7 @@ body {
     width: inherit;
     padding: 4px 0px 4px 0px;
     margin: 0px;
-    background-color: #DDDDDD;
+    background-color: #555;
 }
 
 .projectcatlistother:hover {
