@@ -126,7 +126,6 @@ body {
     padding: 4px 0px 4px 0px;
     margin: 0px;
     background-color: #FFFFFF;
-    color: #FFFFFF;
 }
 
 .projectcatlistcurrent {
@@ -135,6 +134,7 @@ body {
     padding: 4px 0px 4px 0px;
     margin: 0px;
     background-color: #555;
+    color: #FFFFFF;
 }
 
 .projectcatlistother:hover {
