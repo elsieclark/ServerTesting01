@@ -7,6 +7,7 @@ body {
     font-family: "source-sans-pro", sans-serif;
     font-style: normal;
     font-weight: 200;
+    -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 #container {
@@ -83,7 +84,7 @@ body {
 
 #sidebar {
     position: fixed;
-    height: calc(100% - 31px);
+    height: calc(100% - 100px);
     width: 180px;
     background-color: #EEEEEE;
 }
@@ -195,7 +196,7 @@ body {
 #sidebarbottom {
     position: fixed;
     bottom: 0;
-    height: 31px;
+    height: 100px;
     width: 180px;
     background-color: #EEEEEE;
     z-index: -1;
