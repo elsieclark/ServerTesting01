@@ -404,7 +404,7 @@
         
         $(window).scroll(changeSidebar);
         
-        
+        $(window).resize(changeSidebar);
         
         
     </script>
@@ -473,10 +473,17 @@
     </script>
     
     <script>
-    $('.video').each(function(index, el){
-        $(this).css('width', '100%');
-        $(this).css('height', ($(this).width() * 9 / 16));
-    })
+        
+        var resizeVideo = function() {      
+            $('.video').each(function(index, el){
+                $(this).css('width', '100%');
+                $(this).css('height', ($(this).width() * 9 / 16));
+            })
+        }
+        
+        resizeVideo();
+
+        $(window).resize(resizeVideo);
     
     </script>
     
