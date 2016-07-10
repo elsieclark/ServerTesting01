@@ -480,6 +480,22 @@
     
     </script>
     
+    <script>
+        var adjustWidth = function() {
+            if ($(window).width() > 1000) {
+                $('#container').addClass('containerlarge');
+                $('#container').removeClass('containersmall');
+            } else {
+                $('#container').removeClass('containerlarge');
+                $('#container').addClass('containersmall');
+            }
+        }
+        
+        adjustWidth();
+        
+        $(window).resize(adjustWidth);
+    </script>
+    
     
 </body>
 </html>
