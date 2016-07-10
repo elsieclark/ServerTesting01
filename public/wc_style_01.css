@@ -1,18 +1,22 @@
+head {
+    width: 1000px;
+}
+
 body {
     margin: 0;
     font-family: "source-sans-pro", sans-serif;
     font-style: normal;
     font-weight: 200;
+    width: 1000px;
 }
 
 #container {
-    width: inherit;
     height: inherit;
 }
 
 #maintopbar {
     position: fixed;
-    width: 100%;
+    width: 1000px;
     height: 55px;
     margin: 0px 0px 0px 0px;
     background-color: #003034;
@@ -25,8 +29,11 @@ body {
     position: fixed;
     color: #EEEEEE;
     font-size: 30px;
-    margin: 7px 20px 0px 20px;
-    padding: 0px;
+    vertical-align: middle;
+    margin: 0px;
+    padding: 7px 0px 0px 20px;
+    height: 55px;
+    
 }
 
 #maintopbar ul {
@@ -36,6 +43,7 @@ body {
 
 #maintopbar li {
     padding: 2px 40px 0px 40px;
+    height: auto;
     margin: 0px;
     vertical-align: middle;
     float: right;
@@ -261,6 +269,7 @@ body {
 
 .projectcontent p {
     margin: 15px;
+    font-weight: 300;
 }
 
 .mainpartleft {
